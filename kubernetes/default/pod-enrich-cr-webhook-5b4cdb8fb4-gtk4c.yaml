@@ -114,33 +114,33 @@ status:
     status: "True"
     type: Initialized
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-17T17:29:17Z"
-    message: 'containers with unready status: [server]'
-    reason: ContainersNotReady
-    status: "False"
+    lastTransitionTime: "2024-02-17T17:29:20Z"
+    status: "True"
     type: Ready
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-17T17:29:17Z"
-    message: 'containers with unready status: [server]'
-    reason: ContainersNotReady
-    status: "False"
+    lastTransitionTime: "2024-02-17T17:29:20Z"
+    status: "True"
     type: ContainersReady
   - lastProbeTime: null
     lastTransitionTime: "2024-02-17T17:29:17Z"
     status: "True"
     type: PodScheduled
   containerStatuses:
-  - image: svl-artifactory.juniper.net/atom-docker/cn2/sharmag07/mutatingwebhook:m9
-    imageID: ""
+  - containerID: cri-o://2a9c671b75600a36c3440f4f13a6bcf963f560d6583e2e79b2cf53c1c69b8719
+    image: svl-artifactory.juniper.net/atom-docker/cn2/sharmag07/mutatingwebhook:m9
+    imageID: svl-artifactory.juniper.net/atom-docker/cn2/sharmag07/mutatingwebhook@sha256:a4c3598356fea91152fa4d79450aef61ac2109796edb4ee4653a6eafe5b8e58c
     lastState: {}
     name: server
-    ready: false
+    ready: true
     restartCount: 0
-    started: false
+    started: true
     state:
-      waiting:
-        reason: ContainerCreating
+      running:
+        startedAt: "2024-02-17T17:29:20Z"
   hostIP: 10.87.76.24
-  phase: Pending
+  phase: Running
+  podIP: 192.168.0.21
+  podIPs:
+  - ip: 192.168.0.21
   qosClass: BestEffort
   startTime: "2024-02-17T17:29:17Z"
