@@ -1,0 +1,157 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: c6117e3512dede4334fa60811bec60131491b44b755f37f028059bf82ad55559
+    cni.projectcalico.org/podIP: 192.168.0.18/32
+    cni.projectcalico.org/podIPs: 192.168.0.18/32
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "k8s-pod-network",
+          "ips": [
+              "192.168.0.18"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    k8s.v1.cni.cncf.io/networks-status: |-
+      [{
+          "name": "k8s-pod-network",
+          "ips": [
+              "192.168.0.18"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+  creationTimestamp: "2024-02-17T17:03:49Z"
+  generateName: enrich-cr-webhook-5fdbff789d-
+  labels:
+    app: enrich-cr-webhook
+    pod-template-hash: 5fdbff789d
+  name: enrich-cr-webhook-5fdbff789d-s8tnw
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: enrich-cr-webhook-5fdbff789d
+    uid: eae53a6e-3d86-4cd4-b250-93c183437837
+  uid: d6616771-56bb-4021-ab1c-090db25f0d1d
+spec:
+  containers:
+  - image: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook:CER-194
+    imagePullPolicy: IfNotPresent
+    name: server
+    ports:
+    - containerPort: 8443
+      name: tls
+      protocol: TCP
+    - containerPort: 80
+      name: metrics
+      protocol: TCP
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /etc/webhook/certs/
+      name: enrich-cr-webhook-tls-certs
+      readOnly: true
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-dhjzp
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: abhi-master-node
+  nodeSelector:
+    kubernetes.io/os: linux
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1234
+  serviceAccount: enrich-cr-webhook
+  serviceAccountName: enrich-cr-webhook
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: enrich-cr-webhook-tls-certs
+    secret:
+      defaultMode: 420
+      secretName: enrich-cr-webhook-tls
+  - name: kube-api-access-dhjzp
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2024-02-17T17:03:49Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2024-02-17T17:03:49Z"
+    message: 'containers with unready status: [server]'
+    reason: ContainersNotReady
+    status: "False"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2024-02-17T17:03:49Z"
+    message: 'containers with unready status: [server]'
+    reason: ContainersNotReady
+    status: "False"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2024-02-17T17:03:49Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: cri-o://49ca9cc62d765b70dcc35c9102543a22c7c29694e43d51f2fe3be02067dca3f9
+    image: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook:CER-194
+    imageID: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook@sha256:c52f13fdcf6308dd42798bd2b7ea72a88a5375f6924f0d7c5dc029a3b5c60562
+    lastState:
+      terminated:
+        containerID: cri-o://49ca9cc62d765b70dcc35c9102543a22c7c29694e43d51f2fe3be02067dca3f9
+        exitCode: 1
+        finishedAt: "2024-02-17T17:03:51Z"
+        reason: Error
+        startedAt: "2024-02-17T17:03:51Z"
+    name: server
+    ready: false
+    restartCount: 1
+    started: false
+    state:
+      waiting:
+        message: back-off 10s restarting failed container=server pod=enrich-cr-webhook-5fdbff789d-s8tnw_default(d6616771-56bb-4021-ab1c-090db25f0d1d)
+        reason: CrashLoopBackOff
+  hostIP: 10.87.76.24
+  phase: Running
+  podIP: 192.168.0.18
+  podIPs:
+  - ip: 192.168.0.18
+  qosClass: BestEffort
+  startTime: "2024-02-17T17:03:49Z"
