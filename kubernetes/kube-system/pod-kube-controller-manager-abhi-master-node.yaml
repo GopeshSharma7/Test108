@@ -143,16 +143,12 @@ status:
     status: "True"
     type: Initialized
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-17T14:49:45Z"
-    message: 'containers with unready status: [kube-controller-manager]'
-    reason: ContainersNotReady
-    status: "False"
+    lastTransitionTime: "2024-02-17T14:50:03Z"
+    status: "True"
     type: Ready
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-17T14:49:45Z"
-    message: 'containers with unready status: [kube-controller-manager]'
-    reason: ContainersNotReady
-    status: "False"
+    lastTransitionTime: "2024-02-17T14:50:03Z"
+    status: "True"
     type: ContainersReady
   - lastProbeTime: null
     lastTransitionTime: "2024-02-15T09:41:40Z"
@@ -170,9 +166,9 @@ status:
         reason: Error
         startedAt: "2024-02-15T09:41:41Z"
     name: kube-controller-manager
-    ready: false
+    ready: true
     restartCount: 6
-    started: false
+    started: true
     state:
       running:
         startedAt: "2024-02-17T14:49:45Z"
