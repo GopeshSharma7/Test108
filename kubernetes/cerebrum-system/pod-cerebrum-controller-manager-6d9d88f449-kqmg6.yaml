@@ -201,11 +201,11 @@ status:
     status: "True"
     type: Initialized
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-15T09:42:46Z"
+    lastTransitionTime: "2024-02-17T14:49:56Z"
     status: "True"
     type: Ready
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-15T09:42:46Z"
+    lastTransitionTime: "2024-02-17T14:49:56Z"
     status: "True"
     type: ContainersReady
   - lastProbeTime: null
@@ -224,17 +224,23 @@ status:
     state:
       running:
         startedAt: "2024-02-15T09:42:33Z"
-  - containerID: cri-o://5b1468d152d069432dd91401ae12fa56cde66b10cc9c25d89314784f09cd3a99
+  - containerID: cri-o://a5d0e7d8bbce3c4e654dc2f511a23590e141df09325dae61141d562472c76d5c
     image: 10.108.29.173:5000/atom-docker/cn2/bazel-build/dev/x86_64/cerebrum-controller:scint
     imageID: 10.108.29.173:5000/atom-docker/cn2/bazel-build/dev/x86_64/cerebrum-controller@sha256:548b9a3a5847983b7ee3cd82ee6256957845ac86363d98a914ed7e0fef340dff
-    lastState: {}
+    lastState:
+      terminated:
+        containerID: cri-o://5b1468d152d069432dd91401ae12fa56cde66b10cc9c25d89314784f09cd3a99
+        exitCode: 1
+        finishedAt: "2024-02-17T14:49:45Z"
+        reason: Error
+        startedAt: "2024-02-15T09:42:33Z"
     name: manager
     ready: true
-    restartCount: 2
+    restartCount: 3
     started: true
     state:
       running:
-        startedAt: "2024-02-15T09:42:33Z"
+        startedAt: "2024-02-17T14:49:45Z"
   hostIP: 10.87.76.24
   phase: Running
   podIP: 192.168.0.53
