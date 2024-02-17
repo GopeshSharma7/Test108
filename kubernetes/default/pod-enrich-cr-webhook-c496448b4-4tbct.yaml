@@ -139,8 +139,14 @@ status:
     started: false
     state:
       waiting:
-        reason: ContainerCreating
+        message: 'rpc error: code = DeadlineExceeded desc = pinging container registry
+          10.20.240.56:5000: Get "http://10.20.240.56:5000/v2/": dial tcp 10.20.240.56:5000:
+          i/o timeout'
+        reason: ErrImagePull
   hostIP: 10.87.76.24
   phase: Pending
+  podIP: 192.168.0.11
+  podIPs:
+  - ip: 192.168.0.11
   qosClass: BestEffort
   startTime: "2024-02-17T16:51:15Z"
