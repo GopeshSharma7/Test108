@@ -90,11 +90,11 @@ status:
     status: "True"
     type: Initialized
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-17T15:07:16Z"
+    lastTransitionTime: "2024-02-17T15:13:36Z"
     status: "True"
     type: Ready
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-17T15:07:16Z"
+    lastTransitionTime: "2024-02-17T15:13:36Z"
     status: "True"
     type: ContainersReady
   - lastProbeTime: null
@@ -102,23 +102,23 @@ status:
     status: "True"
     type: PodScheduled
   containerStatuses:
-  - containerID: cri-o://4ae98f4e3bf27a5e65af17a37ee7433d306a9f8ee5c1560f71b842ca56d2a682
+  - containerID: cri-o://6724fd402052fa2e14caa88b8cf678ff3d56e78255a782b0497861affacc10e7
     image: registry.k8s.io/kube-scheduler:v1.27.10
     imageID: registry.k8s.io/kube-scheduler@sha256:09294de61e63987f181077cbc2f5c82463878af9cd8ecc6110c54150c9ae3143
     lastState:
       terminated:
-        containerID: cri-o://25852d61818cebe9ec8f549edd66994bb6974f4ac889a036d2641cc1377c9d81
+        containerID: cri-o://4ae98f4e3bf27a5e65af17a37ee7433d306a9f8ee5c1560f71b842ca56d2a682
         exitCode: 1
-        finishedAt: "2024-02-17T15:07:04Z"
+        finishedAt: "2024-02-17T15:13:12Z"
         reason: Error
-        startedAt: "2024-02-17T14:49:46Z"
+        startedAt: "2024-02-17T15:07:05Z"
     name: kube-scheduler
     ready: true
-    restartCount: 7
+    restartCount: 8
     started: true
     state:
       running:
-        startedAt: "2024-02-17T15:07:05Z"
+        startedAt: "2024-02-17T15:13:23Z"
   hostIP: 10.87.76.24
   phase: Running
   podIP: 10.87.76.24
