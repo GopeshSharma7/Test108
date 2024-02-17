@@ -130,19 +130,19 @@ status:
     status: "True"
     type: PodScheduled
   containerStatuses:
-  - containerID: cri-o://df783bc8fbcf0cecdf4743221d3dd57f6f5973115706bf92d677093270e7da43
+  - containerID: cri-o://5f29c62da595e05c48906791de627f598cc7220d407e2450d7bb5dd891feed92
     image: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook:CER-194
     imageID: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook@sha256:c52f13fdcf6308dd42798bd2b7ea72a88a5375f6924f0d7c5dc029a3b5c60562
     lastState:
       terminated:
-        containerID: cri-o://df783bc8fbcf0cecdf4743221d3dd57f6f5973115706bf92d677093270e7da43
+        containerID: cri-o://5f29c62da595e05c48906791de627f598cc7220d407e2450d7bb5dd891feed92
         exitCode: 1
-        finishedAt: "2024-02-17T17:09:38Z"
+        finishedAt: "2024-02-17T17:14:45Z"
         reason: Error
-        startedAt: "2024-02-17T17:09:38Z"
+        startedAt: "2024-02-17T17:14:45Z"
     name: server
     ready: false
-    restartCount: 6
+    restartCount: 7
     started: false
     state:
       waiting:
