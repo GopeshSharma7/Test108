@@ -4,14 +4,14 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"enrich-cr-webhook","namespace":"default"},"spec":{"ports":[{"name":"application","port":443,"targetPort":8443},{"name":"metrics","port":80,"targetPort":"metrics"}],"selector":{"app":"enrich-cr-webhook"}}}
-  creationTimestamp: "2024-02-17T17:03:49Z"
+  creationTimestamp: "2024-02-17T17:29:17Z"
   name: enrich-cr-webhook
   namespace: default
-  uid: ff53abaa-f204-48b4-b2a2-f72dd38edd0b
+  uid: 4e9cf671-74d6-438b-93fc-e4d7baccd7d5
 spec:
-  clusterIP: 10.109.9.199
+  clusterIP: 10.108.172.142
   clusterIPs:
-  - 10.109.9.199
+  - 10.108.172.142
   internalTrafficPolicy: Cluster
   ipFamilies:
   - IPv4
