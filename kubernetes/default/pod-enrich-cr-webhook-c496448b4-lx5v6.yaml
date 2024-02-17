@@ -2,14 +2,14 @@ apiVersion: v1
 kind: Pod
 metadata:
   annotations:
-    cni.projectcalico.org/containerID: 31d095be6c12c716d1428e68bd75ae9804ceeb5dbd36b8d1af44769bd37119ba
-    cni.projectcalico.org/podIP: 192.168.0.63/32
-    cni.projectcalico.org/podIPs: 192.168.0.63/32
+    cni.projectcalico.org/containerID: 5e5a6286bb15cf9c09428aae95accbb6282593d961c62d3c2f8ada7109da4c88
+    cni.projectcalico.org/podIP: 192.168.0.25/32
+    cni.projectcalico.org/podIPs: 192.168.0.25/32
     k8s.v1.cni.cncf.io/network-status: |-
       [{
           "name": "k8s-pod-network",
           "ips": [
-              "192.168.0.63"
+              "192.168.0.25"
           ],
           "default": true,
           "dns": {}
@@ -18,19 +18,17 @@ metadata:
       [{
           "name": "k8s-pod-network",
           "ips": [
-              "192.168.0.63"
+              "192.168.0.25"
           ],
           "default": true,
           "dns": {}
       }]
-  creationTimestamp: "2024-02-17T14:51:01Z"
-  deletionGracePeriodSeconds: 30
-  deletionTimestamp: "2024-02-17T14:51:59Z"
+  creationTimestamp: "2024-02-17T14:51:29Z"
   generateName: enrich-cr-webhook-c496448b4-
   labels:
     app: enrich-cr-webhook
     pod-template-hash: c496448b4
-  name: enrich-cr-webhook-c496448b4-l2crp
+  name: enrich-cr-webhook-c496448b4-lx5v6
   namespace: default
   ownerReferences:
   - apiVersion: apps/v1
@@ -39,7 +37,7 @@ metadata:
     kind: ReplicaSet
     name: enrich-cr-webhook-c496448b4
     uid: f426bf11-d88a-4329-8b2a-dbc56e9a219a
-  uid: 3141a9de-13f6-47d0-8133-ae34e7c7fa13
+  uid: 8003277e-faa7-4c6f-bf6c-ef397336da57
 spec:
   containers:
   - image: 10.20.240.56:5000/atom-docker/cn2/bazel-build/dev/enrich-cr-webhook:CER-194
@@ -60,7 +58,7 @@ spec:
       name: enrich-cr-webhook-tls-certs
       readOnly: true
     - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-      name: kube-api-access-v2vqm
+      name: kube-api-access-ck5p6
       readOnly: true
   dnsPolicy: ClusterFirst
   enableServiceLinks: true
@@ -91,7 +89,7 @@ spec:
     secret:
       defaultMode: 420
       secretName: enrich-cr-webhook-tls
-  - name: kube-api-access-v2vqm
+  - name: kube-api-access-ck5p6
     projected:
       defaultMode: 420
       sources:
@@ -112,23 +110,23 @@ spec:
 status:
   conditions:
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-17T14:51:01Z"
+    lastTransitionTime: "2024-02-17T14:51:29Z"
     status: "True"
     type: Initialized
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-17T14:51:01Z"
+    lastTransitionTime: "2024-02-17T14:51:29Z"
     message: 'containers with unready status: [server]'
     reason: ContainersNotReady
     status: "False"
     type: Ready
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-17T14:51:01Z"
+    lastTransitionTime: "2024-02-17T14:51:29Z"
     message: 'containers with unready status: [server]'
     reason: ContainersNotReady
     status: "False"
     type: ContainersReady
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-17T14:51:01Z"
+    lastTransitionTime: "2024-02-17T14:51:29Z"
     status: "True"
     type: PodScheduled
   containerStatuses:
@@ -145,4 +143,4 @@ status:
   hostIP: 10.87.76.24
   phase: Pending
   qosClass: BestEffort
-  startTime: "2024-02-17T14:51:01Z"
+  startTime: "2024-02-17T14:51:29Z"
