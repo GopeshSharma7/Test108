@@ -119,11 +119,11 @@ status:
     status: "True"
     type: Initialized
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-15T09:42:33Z"
+    lastTransitionTime: "2024-02-17T14:50:17Z"
     status: "True"
     type: Ready
   - lastProbeTime: null
-    lastTransitionTime: "2024-02-15T09:42:33Z"
+    lastTransitionTime: "2024-02-17T14:50:17Z"
     status: "True"
     type: ContainersReady
   - lastProbeTime: null
@@ -131,17 +131,23 @@ status:
     status: "True"
     type: PodScheduled
   containerStatuses:
-  - containerID: cri-o://c7d1187ca4b14b93ae158eb71c0f294ddc0f9701a098d9e87380f97fc443b511
+  - containerID: cri-o://e056cf85abbd7b365591d89936633b16b25afc40ca232382ee1902c76cbaf451
     image: quay.io/jetstack/cert-manager-cainjector:v1.12.0
     imageID: quay.io/jetstack/cert-manager-cainjector@sha256:5cc751f8fde077e152c0119bb9fc0841d4f2c9ab8d69fb80ab538afd19c74044
-    lastState: {}
+    lastState:
+      terminated:
+        containerID: cri-o://c7d1187ca4b14b93ae158eb71c0f294ddc0f9701a098d9e87380f97fc443b511
+        exitCode: 1
+        finishedAt: "2024-02-17T14:50:15Z"
+        reason: Error
+        startedAt: "2024-02-15T09:42:32Z"
     name: cert-manager-cainjector
     ready: true
-    restartCount: 3
+    restartCount: 4
     started: true
     state:
       running:
-        startedAt: "2024-02-15T09:42:32Z"
+        startedAt: "2024-02-17T14:50:16Z"
   hostIP: 10.87.76.24
   phase: Running
   podIP: 192.168.0.42
