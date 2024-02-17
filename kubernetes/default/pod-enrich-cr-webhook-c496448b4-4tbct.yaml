@@ -24,6 +24,8 @@ metadata:
           "dns": {}
       }]
   creationTimestamp: "2024-02-17T16:51:15Z"
+  deletionGracePeriodSeconds: 30
+  deletionTimestamp: "2024-02-17T17:00:56Z"
   generateName: enrich-cr-webhook-c496448b4-
   labels:
     app: enrich-cr-webhook
