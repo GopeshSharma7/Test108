@@ -7,7 +7,7 @@ metadata:
   creationTimestamp: "2024-02-18T19:56:36Z"
   labels:
     author: kubernetes-admin
-    operation: CREATE
+    operation: UPDATE
   name: red-evpn-test9
   namespace: default
   uid: 31b82867-095e-4024-a50d-c7f1207a447f
@@ -20,5 +20,5 @@ spec:
   routingInstanceParent:
     apiVersion: core.cerebrum.juniper.net/v1
     kind: RoutingInstance
-    name: red
+    name: red1
     namespace: default
