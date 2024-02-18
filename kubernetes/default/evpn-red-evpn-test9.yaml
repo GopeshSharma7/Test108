@@ -4,13 +4,13 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"apiVersion":"core.cerebrum.juniper.net/v1","kind":"EVPN","metadata":{"annotations":{},"name":"red-evpn-test9","namespace":"default"},"spec":{"communityExportAllow":true,"communityImportAllow":true,"encapsulation":"vxlan","exportPolicy":{"name":"default-rp"},"routingInstanceParent":{"apiVersion":"core.cerebrum.juniper.net/v1","kind":"RoutingInstance","name":"red","namespace":"default"}}}
-  creationTimestamp: "2024-02-17T17:36:12Z"
+  creationTimestamp: "2024-02-18T19:56:36Z"
   labels:
     author: kubernetes-admin
     operation: CREATE
   name: red-evpn-test9
   namespace: default
-  uid: 0191dd11-b28b-41e9-b72f-f449e93fb975
+  uid: 31b82867-095e-4024-a50d-c7f1207a447f
 spec:
   communityExportAllow: true
   communityImportAllow: true
