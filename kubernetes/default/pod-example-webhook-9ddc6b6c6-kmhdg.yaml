@@ -1,0 +1,152 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: bdb2a2c8426c3022bd2df7a45b0c34c5f671d8be7a93e7a2ffd7a66d314b4423
+    cni.projectcalico.org/podIP: 192.168.0.45/32
+    cni.projectcalico.org/podIPs: 192.168.0.45/32
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "k8s-pod-network",
+          "ips": [
+              "192.168.0.45"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    k8s.v1.cni.cncf.io/networks-status: |-
+      [{
+          "name": "k8s-pod-network",
+          "ips": [
+              "192.168.0.45"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+  creationTimestamp: "2024-02-19T16:11:23Z"
+  generateName: example-webhook-9ddc6b6c6-
+  labels:
+    app: example-webhook
+    pod-template-hash: 9ddc6b6c6
+  name: example-webhook-9ddc6b6c6-kmhdg
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: example-webhook-9ddc6b6c6
+    uid: 40034f11-052e-4f5c-890e-81f8a85e4a37
+  uid: 2f96b180-57e5-4944-8451-a01761b5ba3f
+spec:
+  containers:
+  - image: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook:test
+    imagePullPolicy: IfNotPresent
+    name: server
+    ports:
+    - containerPort: 8443
+      name: tls
+      protocol: TCP
+    - containerPort: 80
+      name: metrics
+      protocol: TCP
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /etc/webhook/certs/
+      name: example-webhook-tls-certs
+      readOnly: true
+    - mountPath: /etc/rules
+      name: config-volume
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-p5mlr
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: abhi-master-node
+  nodeSelector:
+    kubernetes.io/os: linux
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1234
+  serviceAccount: example-webhook
+  serviceAccountName: example-webhook
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: example-webhook-tls-certs
+    secret:
+      defaultMode: 420
+      secretName: example-webhook-tls
+  - configMap:
+      defaultMode: 420
+      name: enrich-cr-config
+    name: config-volume
+  - name: kube-api-access-p5mlr
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2024-02-19T16:11:23Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2024-02-19T16:11:24Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2024-02-19T16:11:24Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2024-02-19T16:11:23Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: cri-o://408a991e1424c76a8810f4bfef0a28faf276563ab4c97ed568a96ee65088c8cf
+    image: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook:test
+    imageID: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook@sha256:1ca1e6949daaf597156ed2ff139dacdfbd381095b94f37ec6ea58f917dcd6d07
+    lastState: {}
+    name: server
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2024-02-19T16:11:24Z"
+  hostIP: 10.87.76.24
+  phase: Running
+  podIP: 192.168.0.45
+  podIPs:
+  - ip: 192.168.0.45
+  qosClass: BestEffort
+  startTime: "2024-02-19T16:11:23Z"
