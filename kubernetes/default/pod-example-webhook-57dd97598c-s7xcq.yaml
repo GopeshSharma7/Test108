@@ -130,7 +130,7 @@ status:
     status: "True"
     type: PodScheduled
   containerStatuses:
-  - containerID: cri-o://1506dd5d94273ddc5f0467250d4d9f08658063b4cbc7130da93b97104b338c58
+  - containerID: cri-o://dcff612f4ba54b0ff17437f4863e0341c1d3517a412955aabd44ef276c533aab
     image: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook:test
     imageID: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook@sha256:1ca1e6949daaf597156ed2ff139dacdfbd381095b94f37ec6ea58f917dcd6d07
     lastState:
@@ -142,12 +142,15 @@ status:
         startedAt: "2024-02-19T05:54:56Z"
     name: server
     ready: false
-    restartCount: 4
+    restartCount: 5
     started: false
     state:
-      waiting:
-        message: back-off 1m20s restarting failed container=server pod=example-webhook-57dd97598c-s7xcq_default(ed87d81d-92c2-47ea-a35c-18343d9d0d59)
-        reason: CrashLoopBackOff
+      terminated:
+        containerID: cri-o://dcff612f4ba54b0ff17437f4863e0341c1d3517a412955aabd44ef276c533aab
+        exitCode: 1
+        finishedAt: "2024-02-19T05:56:22Z"
+        reason: Error
+        startedAt: "2024-02-19T05:56:22Z"
   hostIP: 10.87.76.24
   phase: Running
   podIP: 192.168.0.34
