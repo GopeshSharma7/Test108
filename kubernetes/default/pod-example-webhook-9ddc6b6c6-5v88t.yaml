@@ -24,6 +24,8 @@ metadata:
           "dns": {}
       }]
   creationTimestamp: "2024-02-19T06:38:59Z"
+  deletionGracePeriodSeconds: 30
+  deletionTimestamp: "2024-02-19T06:42:25Z"
   generateName: example-webhook-9ddc6b6c6-
   labels:
     app: example-webhook
