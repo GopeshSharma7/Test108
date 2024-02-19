@@ -5,8 +5,11 @@ metadata:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"apiVersion":"core.cerebrum.juniper.net/v1","kind":"EVPN","metadata":{"annotations":{},"name":"red-evpn-test9","namespace":"default"},"spec":{"communityExportAllow":true,"communityImportAllow":true,"encapsulation":"vxlan","exportPolicy":{"name":"default-rp"},"routingInstanceParent":{"apiVersion":"core.cerebrum.juniper.net/v1","kind":"RoutingInstance","name":"red","namespace":"default"}}}
   creationTimestamp: "2024-02-18T19:56:36Z"
+  finalizers:
+  - evpn.finalizers.core.cerebrum.juniper.net
   labels:
     author: kubernetes-admin
+    cerebrum.juniper.net/bref_536e1ac6db218046a1cf6ce2835b45cfffa3510c25b7c28eeb632940: RoutingInstance_default_red1
     operation: UPDATE
   name: red-evpn-test9
   namespace: default
@@ -22,3 +25,5 @@ spec:
     kind: RoutingInstance
     name: red1
     namespace: default
+status:
+  allocatedVNI: 4097
