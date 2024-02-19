@@ -1,6 +1,28 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  annotations:
+    cni.projectcalico.org/containerID: 4e6ed763b137c4581682d4f283b7f0b0377e999ccd343a2f9ce96e1783a93321
+    cni.projectcalico.org/podIP: 192.168.0.31/32
+    cni.projectcalico.org/podIPs: 192.168.0.31/32
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "k8s-pod-network",
+          "ips": [
+              "192.168.0.31"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    k8s.v1.cni.cncf.io/networks-status: |-
+      [{
+          "name": "k8s-pod-network",
+          "ips": [
+              "192.168.0.31"
+          ],
+          "default": true,
+          "dns": {}
+      }]
   creationTimestamp: "2024-02-19T05:47:45Z"
   generateName: example-webhook-57dd97598c-
   labels:
@@ -108,17 +130,28 @@ status:
     status: "True"
     type: PodScheduled
   containerStatuses:
-  - image: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook:test
-    imageID: ""
-    lastState: {}
+  - containerID: cri-o://ea193f21b4106a4f50500b347d7e803e0f9dd7621d3a6264fdea771ab14386b8
+    image: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook:test
+    imageID: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook@sha256:1ca1e6949daaf597156ed2ff139dacdfbd381095b94f37ec6ea58f917dcd6d07
+    lastState:
+      terminated:
+        containerID: cri-o://ea193f21b4106a4f50500b347d7e803e0f9dd7621d3a6264fdea771ab14386b8
+        exitCode: 1
+        finishedAt: "2024-02-19T05:47:48Z"
+        reason: Error
+        startedAt: "2024-02-19T05:47:48Z"
     name: server
     ready: false
-    restartCount: 0
+    restartCount: 1
     started: false
     state:
       waiting:
-        reason: ContainerCreating
+        message: back-off 10s restarting failed container=server pod=example-webhook-57dd97598c-fvmzx_default(855ceab3-129b-4495-a246-e5903bfc48dd)
+        reason: CrashLoopBackOff
   hostIP: 10.87.76.24
-  phase: Pending
+  phase: Running
+  podIP: 192.168.0.31
+  podIPs:
+  - ip: 192.168.0.31
   qosClass: BestEffort
   startTime: "2024-02-19T05:47:45Z"
