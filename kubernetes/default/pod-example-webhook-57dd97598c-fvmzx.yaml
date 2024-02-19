@@ -135,22 +135,19 @@ status:
     imageID: 10.108.30.10:5000/atom-docker/cn2/bazel-build/dev/x86_64/enrich-cr-webhook@sha256:1ca1e6949daaf597156ed2ff139dacdfbd381095b94f37ec6ea58f917dcd6d07
     lastState:
       terminated:
-        containerID: cri-o://51dd56fd34f756af6eda88627c635878e8d8e00dee5a3d84b6d2a400a4f2b520
-        exitCode: 1
-        finishedAt: "2024-02-19T05:48:02Z"
-        reason: Error
-        startedAt: "2024-02-19T05:48:02Z"
-    name: server
-    ready: false
-    restartCount: 3
-    started: false
-    state:
-      terminated:
         containerID: cri-o://54f7511def44a31df6d1b54b403f5749902bc592960108b771f896ce400b1698
         exitCode: 1
         finishedAt: "2024-02-19T05:48:30Z"
         reason: Error
         startedAt: "2024-02-19T05:48:30Z"
+    name: server
+    ready: false
+    restartCount: 3
+    started: false
+    state:
+      waiting:
+        message: back-off 40s restarting failed container=server pod=example-webhook-57dd97598c-fvmzx_default(855ceab3-129b-4495-a246-e5903bfc48dd)
+        reason: CrashLoopBackOff
   hostIP: 10.87.76.24
   phase: Running
   podIP: 192.168.0.31
