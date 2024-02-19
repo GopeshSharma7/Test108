@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   creationTimestamp: "2024-02-19T06:37:36Z"
+  deletionGracePeriodSeconds: 30
+  deletionTimestamp: "2024-02-19T06:38:25Z"
   generateName: example-webhook-9ddc6b6c6-
   labels:
     app: example-webhook
