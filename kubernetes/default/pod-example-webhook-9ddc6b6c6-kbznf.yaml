@@ -3,8 +3,8 @@ kind: Pod
 metadata:
   annotations:
     cni.projectcalico.org/containerID: 69059f6f0200e802921e2140034c54e49ab75ca829a4ea22627dc5265dca1400
-    cni.projectcalico.org/podIP: 192.168.0.38/32
-    cni.projectcalico.org/podIPs: 192.168.0.38/32
+    cni.projectcalico.org/podIP: ""
+    cni.projectcalico.org/podIPs: ""
     k8s.v1.cni.cncf.io/network-status: |-
       [{
           "name": "k8s-pod-network",
@@ -24,6 +24,8 @@ metadata:
           "dns": {}
       }]
   creationTimestamp: "2024-02-19T06:31:51Z"
+  deletionGracePeriodSeconds: 30
+  deletionTimestamp: "2024-02-19T06:33:45Z"
   generateName: example-webhook-9ddc6b6c6-
   labels:
     app: example-webhook
