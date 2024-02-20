@@ -1,0 +1,24 @@
+apiVersion: core.cerebrum.juniper.net/v1
+kind: EVPN
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"core.cerebrum.juniper.net/v1","kind":"EVPN","metadata":{"annotations":{},"name":"red-evpn-test-rohit13","namespace":"default"},"spec":{"communityExportAllow":true,"communityImportAllow":true,"encapsulation":"vxlan","exportPolicy":{"name":"default-rp"},"routingInstanceParent":{"apiVersion":"core.cerebrum.juniper.net/v1","kind":"RoutingInstance","name":"red","namespace":"default"}}}
+  creationTimestamp: "2024-02-20T04:19:48Z"
+  labels:
+    author: kubernetes-admin
+    operation: CREATE
+  name: red-evpn-test-rohit13
+  namespace: default
+  uid: c7a596b2-c9b4-4fa3-8b82-572249d86c03
+spec:
+  communityExportAllow: true
+  communityImportAllow: true
+  encapsulation: vxlan
+  exportPolicy:
+    name: default-rp
+  routingInstanceParent:
+    apiVersion: core.cerebrum.juniper.net/v1
+    kind: RoutingInstance
+    name: red
+    namespace: default
